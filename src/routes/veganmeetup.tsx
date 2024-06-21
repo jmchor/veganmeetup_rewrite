@@ -1,5 +1,5 @@
 import { createFileRoute } from '@tanstack/react-router';
-import Masonry from 'react-responsive-masonry';
+import { ResponsiveMasonry } from 'react-responsive-masonry';
 import { MdArrowBackIos } from 'react-icons/md';
 import { useQuery } from '@apollo/client';
 
@@ -9,9 +9,11 @@ import {
 	EventContainer,
 	Headline,
 	ImageContainer,
+	Instagram,
 	LowerContainer,
 	MainContainer,
 	MasonryContainer,
+	MasonryStyles,
 	MeetupContainer,
 	PageContainer,
 	SocialContainer,
@@ -40,16 +42,9 @@ function VeganMeetupPage() {
 		<PageContainer>
 			<MainContainer>
 				<UpperContainer className='upperContainer'>
-					<SocialContainer className='socialIcons'>
-						<SocialHeadingContainer>
-							<h2> Wie man uns findet</h2>
-						</SocialHeadingContainer>
-						<SocialIconContainer>
-							<SocialIcons src='/Signal-Logo-Ultramarine.svg' alt='Signal Messenger Icon' />
-							<Instagram src='/Instagram_Glyph_Gradient.svg' alt='Instagram Icon' />
-							<SocialIcons src='/email.png' alt='Email envelope Icon' />
-						</SocialIconContainer>
-					</SocialContainer>
+					<EventContainer className='socialIcons'>
+						<h3>Event</h3>
+					</EventContainer>
 					<MeetupContainer className='veganmeetup'>
 						<StyledLink to='/'>
 							<div style={{ display: 'flex', alignItems: 'center' }}>
@@ -63,21 +58,30 @@ function VeganMeetupPage() {
 				<LowerContainer className='lowerContainer'>
 					<ImageContainer className='lowerLeft'>
 						<MasonryContainer className='images'>
-							<Masonry
-								columnsCount={3}
-								gutter='10px'
-								style={{ height: '60vh', overflowY: 'scroll', scrollbarWidth: 'none' }}
-							>
-								{data?.images?.map((image) => (
-									<img key={image?.id} src={image?.image?.publicUrlTransformed as string} alt={image?.alt as string} />
-								))}
-							</Masonry>
+							<ResponsiveMasonry columnsCountBreakPoints={{ 250: 1, 400: 2, 900: 3 }}>
+								<MasonryStyles gutter='10px'>
+									{data?.images?.map((image) => (
+										<img
+											key={image?.id}
+											src={image?.image?.publicUrlTransformed as string}
+											alt={image?.alt as string}
+										/>
+									))}
+								</MasonryStyles>
+							</ResponsiveMasonry>
 						</MasonryContainer>
 					</ImageContainer>
 
-					<EventContainer className='lowerRight'>
-						<h3>Event</h3>
-					</EventContainer>
+					<SocialContainer className='lowerRight'>
+						<SocialHeadingContainer>
+							<h2>Sprecht mit uns!</h2>
+						</SocialHeadingContainer>
+						<SocialIconContainer>
+							<SocialIcons src='/Signal-Logo-Ultramarine.svg' alt='Signal Messenger Icon' />
+							<Instagram src='/Instagram_Glyph_Gradient.svg' alt='Instagram Icon' />
+							<SocialIcons src='/email.png' alt='Email envelope Icon' />
+						</SocialIconContainer>
+					</SocialContainer>
 				</LowerContainer>
 			</MainContainer>
 		</PageContainer>
