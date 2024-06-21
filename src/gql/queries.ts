@@ -7,7 +7,6 @@ export const ALL_IMAGES_QUERY = graphql(`
 				publicUrlTransformed
 			}
 			alt
-			id
 		}
 	}
 `);
