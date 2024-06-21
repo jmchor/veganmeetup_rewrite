@@ -1,3 +1,4 @@
+import { Link } from '@tanstack/react-router';
 import { createGlobalStyle } from 'styled-components';
 
 export const GlobalStyles = createGlobalStyle`
@@ -21,11 +22,20 @@ html {
 body {
 	margin: 0;
     padding:0;
-	background-image: linear-gradient(60deg, #64b3f4 0%, #c2e59c 100%);
-    height: 100vh;
+	/* background-image: linear-gradient(60deg, #64b3f4 0%, #c2e59c 100%); */
+	background: url('/miika-laaksonen-unsplash.jpg') no-repeat 12% 70%;
+	background-repeat: no-repeat;
+	height: 100vh;
+	overflow-y: hidden;
+
+
 
 
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+}
+
+Link {
+	text-decoration: none;
 }
 
 
