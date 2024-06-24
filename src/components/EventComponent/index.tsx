@@ -1,5 +1,7 @@
 import { useQuery } from '@apollo/client';
+import { Link } from '@tanstack/react-router';
 import { ALL_EVENTS_QUERY } from 'src/gql/queries';
+import { StyledLink } from 'src/styles/StyledLinks';
 import styled from 'styled-components';
 
 const EventComponent = () => {
@@ -31,7 +33,7 @@ const EventComponent = () => {
 	}
 
 	return (
-		<ComponentContainer>
+		<ComponentContainer to={`/events/${data?.events[0].id as string}`}>
 			<DateContainer className='left'>
 				<h1>{transformedDate[0]}</h1>
 				<h4>{transformedDate[1]}</h4>
@@ -50,10 +52,12 @@ const EventComponent = () => {
 };
 export default EventComponent;
 
-export const ComponentContainer = styled.div`
+export const ComponentContainer = styled(Link)`
 	display: flex;
 	height: 100%;
 	width: 100%;
+	text-decoration: none;
+	color: black;
 	@media screen and (max-width: 900px) {
 		flex-direction: column;
 	}
@@ -118,4 +122,11 @@ export const ContentContainer = styled.div`
 			margin: 0;
 		}
 	}
+`;
+
+export const EventLink = styled(Link)`
+	text-decoration: none;
+	color: black;
+	margin: 0;
+	padding: 0;
 `;
