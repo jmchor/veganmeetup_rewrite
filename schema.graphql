@@ -393,6 +393,7 @@ input ImageCreateInput {
 type Event {
 	id: ID!
 	title: String
+	headerImage: Image
 	date: CalendarDay
 	from: String
 	until: String
@@ -418,6 +419,7 @@ input EventWhereInput {
 	NOT: [EventWhereInput!]
 	id: IDFilter
 	title: StringFilter
+	headerImage: ImageWhereInput
 	date: CalendarDayNullableFilter
 	from: StringFilter
 	until: StringFilter
@@ -455,6 +457,7 @@ input EventOrderByInput {
 
 input EventUpdateInput {
 	title: String
+	headerImage: ImageRelateToOneForUpdateInput
 	date: CalendarDay
 	from: String
 	until: String
@@ -462,6 +465,12 @@ input EventUpdateInput {
 	location: String
 	content: JSON
 	timestamp: DateTime
+}
+
+input ImageRelateToOneForUpdateInput {
+	create: ImageCreateInput
+	connect: ImageWhereUniqueInput
+	disconnect: Boolean
 }
 
 input EventUpdateArgs {
@@ -471,6 +480,7 @@ input EventUpdateArgs {
 
 input EventCreateInput {
 	title: String
+	headerImage: ImageRelateToOneForCreateInput
 	date: CalendarDay
 	from: String
 	until: String
@@ -478,6 +488,11 @@ input EventCreateInput {
 	location: String
 	content: JSON
 	timestamp: DateTime
+}
+
+input ImageRelateToOneForCreateInput {
+	create: ImageCreateInput
+	connect: ImageWhereUniqueInput
 }
 
 type Activist {
@@ -513,12 +528,6 @@ input ActivistUpdateInput {
 	description: String
 }
 
-input ImageRelateToOneForUpdateInput {
-	create: ImageCreateInput
-	connect: ImageWhereUniqueInput
-	disconnect: Boolean
-}
-
 input ActivistUpdateArgs {
 	where: ActivistWhereUniqueInput!
 	data: ActivistUpdateInput!
@@ -528,11 +537,6 @@ input ActivistCreateInput {
 	name: String
 	thumbnail: ImageRelateToOneForCreateInput
 	description: String
-}
-
-input ImageRelateToOneForCreateInput {
-	create: ImageCreateInput
-	connect: ImageWhereUniqueInput
 }
 
 type Podcast {
