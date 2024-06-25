@@ -1,7 +1,7 @@
 import { useQuery } from '@apollo/client';
 import { Link } from '@tanstack/react-router';
 import { ALL_EVENTS_QUERY } from 'src/gql/queries';
-import { StyledLink } from 'src/styles/StyledLinks';
+import transformDateToArray from 'src/lib/transformDateToArray';
 import styled from 'styled-components';
 
 const EventComponent = () => {
@@ -15,17 +15,6 @@ const EventComponent = () => {
 		},
 	});
 
-	const transformDateToArray = (dateString: string) => {
-		const date = new Date(dateString);
-		const options = { day: 'numeric', month: 'long', year: 'numeric' };
-
-		const formattedDate = date.toLocaleDateString('en-GB', options as object);
-
-		const dateArray = formattedDate.split(' ');
-
-		return dateArray;
-	};
-
 	let transformedDate: string[] = [];
 
 	if (data?.events && data?.events.length > 0) {
@@ -33,21 +22,25 @@ const EventComponent = () => {
 	}
 
 	return (
-		<ComponentContainer to={`/events/${data?.events[0].id as string}`}>
-			<DateContainer className='left'>
-				<h1>{transformedDate[0]}</h1>
-				<h4>{transformedDate[1]}</h4>
-				<h4>{transformedDate[2]}</h4>
-			</DateContainer>
-			<ContentContainer className='right'>
-				<h1>{data?.events && data?.events.length > 0 && data?.events[0].title}</h1>
-				<h4>
-					{data?.events && data?.events.length > 0 && (data?.events[0]?.from as string)} Uhr -{' '}
-					{data?.events && data?.events.length > 0 && (data?.events[0]?.until as string)} Uhr
-				</h4>
-				<p>{data?.events && data?.events.length > 0 && data?.events[0].location}</p>
-			</ContentContainer>
-		</ComponentContainer>
+		<>
+			{data?.events && data?.events.length > 0 && (
+				<ComponentContainer to={`/events/${data?.events[0].id as string}`}>
+					<DateContainer className='left'>
+						<h1>{transformedDate[0]}</h1>
+						<h4>{transformedDate[1]}</h4>
+						<h4>{transformedDate[2]}</h4>
+					</DateContainer>
+					<ContentContainer className='right'>
+						<h1>{data?.events && data?.events.length > 0 && data?.events[0].title}</h1>
+						<h4>
+							{data?.events && data?.events.length > 0 && (data?.events[0]?.from as string)} Uhr -{' '}
+							{data?.events && data?.events.length > 0 && (data?.events[0]?.until as string)} Uhr
+						</h4>
+						<p>{data?.events && data?.events.length > 0 && data?.events[0].location}</p>
+					</ContentContainer>
+				</ComponentContainer>
+			)}
+		</>
 	);
 };
 export default EventComponent;
