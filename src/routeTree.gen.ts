@@ -14,6 +14,7 @@ import { Route as rootRoute } from './routes/__root'
 import { Route as VeganmeetupImport } from './routes/veganmeetup'
 import { Route as AboutImport } from './routes/about'
 import { Route as IndexImport } from './routes/index'
+import { Route as EventsEventidImport } from './routes/events.$eventid'
 
 // Create/Update Routes
 
@@ -29,6 +30,11 @@ const AboutRoute = AboutImport.update({
 
 const IndexRoute = IndexImport.update({
   path: '/',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const EventsEventidRoute = EventsEventidImport.update({
+  path: '/events/$eventid',
   getParentRoute: () => rootRoute,
 } as any)
 
@@ -57,6 +63,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof VeganmeetupImport
       parentRoute: typeof rootRoute
     }
+    '/events/$eventid': {
+      id: '/events/$eventid'
+      path: '/events/$eventid'
+      fullPath: '/events/$eventid'
+      preLoaderRoute: typeof EventsEventidImport
+      parentRoute: typeof rootRoute
+    }
   }
 }
 
@@ -66,6 +79,7 @@ export const routeTree = rootRoute.addChildren({
   IndexRoute,
   AboutRoute,
   VeganmeetupRoute,
+  EventsEventidRoute,
 })
 
 /* prettier-ignore-end */
@@ -78,7 +92,8 @@ export const routeTree = rootRoute.addChildren({
       "children": [
         "/",
         "/about",
-        "/veganmeetup"
+        "/veganmeetup",
+        "/events/$eventid"
       ]
     },
     "/": {
@@ -89,6 +104,9 @@ export const routeTree = rootRoute.addChildren({
     },
     "/veganmeetup": {
       "filePath": "veganmeetup.tsx"
+    },
+    "/events/$eventid": {
+      "filePath": "events.$eventid.tsx"
     }
   }
 }
