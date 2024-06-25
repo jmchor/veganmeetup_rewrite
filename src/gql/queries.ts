@@ -29,3 +29,26 @@ export const ALL_EVENTS_QUERY = graphql(`
 		}
 	}
 `);
+
+export const SINGLE_EVENT_QUERY = graphql(`
+	query SINGLE_EVENT_QUERY($where: EventWhereUniqueInput!) {
+		event(where: $where) {
+			id
+			title
+			date
+			from
+			until
+			pastEvent
+			location
+			content {
+				document
+			}
+			timestamp
+			headerImage {
+				image {
+					publicUrlTransformed
+				}
+			}
+		}
+	}
+`);
