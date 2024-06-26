@@ -41,7 +41,10 @@ function LandingPage() {
 						<EmbeddedPageComponent source='http://localhost:5173/about' />
 						<OverlayLink to='http://localhost:5173/about'></OverlayLink>
 					</Container>
-					<Container>Item 3</Container>
+					<Container>
+						<EmbeddedPageComponent source='http://localhost:5173/timeline' />
+						<OverlayLink to='http://localhost:5173/timeline'></OverlayLink>
+					</Container>
 					<Container>Item 4</Container>
 				</CarouselStyles>
 			</CarouselContainer>
