@@ -5,6 +5,7 @@ import transformDateToArray from 'src/lib/transformDateToArray';
 import { PageContainer } from 'src/styles/VeganMeetupRouteStyles';
 import styled from 'styled-components';
 import { MdKeyboardDoubleArrowLeft } from 'react-icons/md';
+import { AddToCalendarButton } from 'add-to-calendar-button-react';
 
 export const Route = createFileRoute('/events/$eventid')({
 	component: EventPageComponent,
@@ -55,6 +56,15 @@ function EventPageComponent() {
 						Von {data?.event?.from} Uhr - {data?.event?.until} Uhr
 					</h4>
 					<h4>Wo: {data?.event?.location}</h4>
+					<AddToCalendarButton
+						name={data?.event?.title as string}
+						startDate={data?.event?.date as string}
+						startTime={data?.event?.from as string}
+						endTime={data?.event?.until as string}
+						options={['Apple', 'Google', 'Yahoo', 'iCal']}
+						timeZone='Europe/Berlin'
+						location={data?.event?.location as string}
+					></AddToCalendarButton>
 					<TextContainer>
 						{documentArray.map((item, index) => (
 							<p key={index}>{item.text}</p>

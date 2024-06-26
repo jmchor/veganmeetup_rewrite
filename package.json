@@ -16,6 +16,7 @@
     "@public-ui/themes": "^2.1.2",
     "@tanstack/react-router": "^1.38.1",
     "@types/apollo-upload-client": "^18.0.0",
+    "add-to-calendar-button-react": "^2.6.18",
     "apollo-upload-client": "^18.0.1",
     "gql.tada": "^1.7.6",
     "graphql": "^16.8.2",
