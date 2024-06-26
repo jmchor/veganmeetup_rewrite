@@ -1,4 +1,3 @@
-import { KolLink } from '@public-ui/react';
 import { Link, createFileRoute } from '@tanstack/react-router';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
@@ -38,7 +37,10 @@ function LandingPage() {
 						<EmbeddedPageComponent source='http://localhost:5173/veganmeetup' />
 						<OverlayLink to='http://localhost:5173/veganmeetup'></OverlayLink>
 					</Container>
-					<Container></Container>
+					<Container>
+						<EmbeddedPageComponent source='http://localhost:5173/about' />
+						<OverlayLink to='http://localhost:5173/about'></OverlayLink>
+					</Container>
 					<Container>Item 3</Container>
 					<Container>Item 4</Container>
 				</CarouselStyles>
@@ -54,6 +56,12 @@ export const Container = styled.div`
 	margin: 0 auto;
 	background: #fcfcfc81;
 	position: relative;
+	overflow-y: hidden;
+
+	@media screen and (max-width: 768px) {
+		width: 90%;
+		height: 90vh;
+	}
 `;
 
 export const CarouselContainer = styled.div`
