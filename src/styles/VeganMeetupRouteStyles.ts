@@ -74,13 +74,6 @@ export const MeetupContainer = styled.div`
 	padding: 20px;
 	margin: 20px 20px 0 0px;
 
-	&:hover {
-		h1 {
-			transform: scale3d(1.2, 1.2, 1.2);
-			transition: all 0.3s ease-in-out;
-		}
-	}
-
 	@media screen and (max-width: 768px) {
 		flex: 0;
 		min-width: 30%;
