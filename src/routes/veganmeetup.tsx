@@ -1,8 +1,9 @@
-import { createFileRoute } from '@tanstack/react-router';
-import { ResponsiveMasonry } from 'react-responsive-masonry';
-import { MdArrowBackIos } from 'react-icons/md';
 import { useQuery } from '@apollo/client';
+import { createFileRoute } from '@tanstack/react-router';
+import { MdArrowBackIos } from 'react-icons/md';
+import { ResponsiveMasonry } from 'react-responsive-masonry';
 
+import EventComponent from 'src/components/EventComponent';
 import { ALL_IMAGES_QUERY } from 'src/gql/queries';
 import { StyledLink } from 'src/styles/StyledLinks';
 import {
@@ -22,7 +23,6 @@ import {
 	SocialIcons,
 	UpperContainer,
 } from 'src/styles/VeganMeetupRouteStyles';
-import EventComponent from 'src/components/EventComponent';
 
 export const Route = createFileRoute('/veganmeetup')({
 	component: VeganMeetupPage,
@@ -52,7 +52,9 @@ function VeganMeetupPage() {
 								<MdArrowBackIos /> Navigation
 							</div>
 						</StyledLink>
-						<Headline>Vegan Meetup Mainz</Headline>
+						<Headline>
+							<StyledLink to='/about'>Vegan Meetup Mainz</StyledLink>
+						</Headline>
 					</MeetupContainer>
 				</UpperContainer>
 
