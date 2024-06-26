@@ -498,6 +498,7 @@ input ImageRelateToOneForCreateInput {
 type Activist {
 	id: ID!
 	name: String
+	url: String
 	thumbnail: Image
 	description: String
 }
@@ -512,6 +513,7 @@ input ActivistWhereInput {
 	NOT: [ActivistWhereInput!]
 	id: IDFilter
 	name: StringFilter
+	url: StringFilter
 	thumbnail: ImageWhereInput
 	description: StringFilter
 }
@@ -519,11 +521,13 @@ input ActivistWhereInput {
 input ActivistOrderByInput {
 	id: OrderDirection
 	name: OrderDirection
+	url: OrderDirection
 	description: OrderDirection
 }
 
 input ActivistUpdateInput {
 	name: String
+	url: String
 	thumbnail: ImageRelateToOneForUpdateInput
 	description: String
 }
@@ -535,6 +539,7 @@ input ActivistUpdateArgs {
 
 input ActivistCreateInput {
 	name: String
+	url: String
 	thumbnail: ImageRelateToOneForCreateInput
 	description: String
 }
@@ -542,6 +547,7 @@ input ActivistCreateInput {
 type Podcast {
 	id: ID!
 	name: String
+	url: String
 	thumbnail: Image
 	description: String
 }
@@ -556,6 +562,7 @@ input PodcastWhereInput {
 	NOT: [PodcastWhereInput!]
 	id: IDFilter
 	name: StringFilter
+	url: StringFilter
 	thumbnail: ImageWhereInput
 	description: StringFilter
 }
@@ -563,11 +570,13 @@ input PodcastWhereInput {
 input PodcastOrderByInput {
 	id: OrderDirection
 	name: OrderDirection
+	url: OrderDirection
 	description: OrderDirection
 }
 
 input PodcastUpdateInput {
 	name: String
+	url: String
 	thumbnail: ImageRelateToOneForUpdateInput
 	description: String
 }
@@ -579,6 +588,7 @@ input PodcastUpdateArgs {
 
 input PodcastCreateInput {
 	name: String
+	url: String
 	thumbnail: ImageRelateToOneForCreateInput
 	description: String
 }
