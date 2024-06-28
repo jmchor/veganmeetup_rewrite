@@ -76,6 +76,9 @@ export const CarouselContainer = styled.div`
 
 export const CarouselStyles = styled(Carousel)`
 	box-shadow: 0px 200px 100px -180px rgba(0, 0, 0, 0.293);
+	button {
+		background: rgb(108 105 105);
+	}
 `;
 
 export const OverlayLink = styled(Link)`
