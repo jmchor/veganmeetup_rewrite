@@ -1,5 +1,5 @@
-import { Link, createFileRoute } from '@tanstack/react-router';
-import { MdKeyboardDoubleArrowLeft } from 'react-icons/md';
+import { createFileRoute } from '@tanstack/react-router';
+import { MdArrowBackIos } from 'react-icons/md';
 import EventComponent from 'src/components/EventComponent';
 import {
 	AboutEventContainer,
@@ -8,9 +8,9 @@ import {
 	AboutSocialContainer,
 	AboutUpperContainer,
 	AboutUsContainer,
-	Navigation,
 	TextContainer,
 } from 'src/styles/AboutPageStyles';
+import { StyledLink } from 'src/styles/StyledLinks';
 import { MainContainer, PageContainer } from 'src/styles/VeganMeetupRouteStyles';
 
 export const Route = createFileRoute('/about')({
@@ -64,11 +64,14 @@ function AboutPage() {
 								Menschen teilen, und vielleicht noch viele weitere Menschen zu einer veganen Lebensweise und
 								Aktivismusarbeit zu bringen - das wärs doch!
 							</p>
-							<Navigation>
-								<Link to='/'>
-									<MdKeyboardDoubleArrowLeft size={25} style={{ color: 'black' }} />
-								</Link>
-							</Navigation>
+							<StyledLink to='/'>
+								<br />
+								<div
+									style={{ display: 'flex', alignItems: 'center', color: 'black', marginTop: '30px', fontSize: '20px' }}
+								>
+									<MdArrowBackIos fontSize={20} style={{ marginRight: '5px' }} /> Zurück zur Navigation
+								</div>
+							</StyledLink>
 						</AboutUsContainer>
 
 						<AboutSocialContainer className='lowerRight'>

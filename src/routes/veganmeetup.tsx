@@ -49,7 +49,7 @@ function VeganMeetupPage() {
 					<MeetupContainer className='veganmeetup'>
 						<StyledLink to='/'>
 							<div style={{ display: 'flex', alignItems: 'center' }}>
-								<MdArrowBackIos /> Navigation
+								<MdArrowBackIos /> Zurück zur Navigation
 							</div>
 						</StyledLink>
 						<Headline>

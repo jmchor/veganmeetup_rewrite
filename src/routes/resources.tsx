@@ -3,13 +3,13 @@ import { Link, createFileRoute } from '@tanstack/react-router';
 import { useState } from 'react';
 import { MdKeyboardDoubleArrowLeft } from 'react-icons/md';
 import { ResponsiveMasonry } from 'react-responsive-masonry';
-import RessourceCardComponent from 'src/components/RessourceCardComponent';
+import ResourceCardComponent from 'src/components/ResourceCardComponent';
 import { ALL_ACTIVISTS_QUERY, ALL_BOOKS_QUERY, ALL_PODCASTS_QUERY, ALL_VIDEOS_QUERY } from 'src/gql/queries';
-import { RessourceNavigation, AnnouncementContainer, RessourceMasonryStyles } from 'src/styles/ResourceRouteStyles';
+import { AnnouncementContainer, RessourceMasonryStyles, RessourceNavigation } from 'src/styles/ResourceRouteStyles';
 import { MasonryContainer, PageContainer } from 'src/styles/VeganMeetupRouteStyles';
 
-export const Route = createFileRoute('/ressources')({
-	component: RessourcesPage,
+export const Route = createFileRoute('/resources')({
+	component: ResourcesPage,
 });
 
 interface BaseResource {
@@ -21,7 +21,7 @@ interface BaseResource {
 	author?: string | null;
 }
 
-function RessourcesPage() {
+function ResourcesPage() {
 	const [allDataArray, setAllDataArray] = useState<BaseResource[]>([]);
 	const { data: activistData } = useQuery(ALL_ACTIVISTS_QUERY, {
 		onCompleted: (data) => {
@@ -63,7 +63,7 @@ function RessourcesPage() {
 					<RessourceMasonryStyles gutter='10px'>
 						{allDataArray.length > 0 &&
 							allDataArray.map((item) => (
-								<RessourceCardComponent
+								<ResourceCardComponent
 									key={item.id}
 									url={item.url as string}
 									image={item?.thumbnail?.image?.publicUrlTransformed as string}

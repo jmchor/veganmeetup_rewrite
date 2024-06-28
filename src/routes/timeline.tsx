@@ -1,6 +1,6 @@
-import { Link, createFileRoute } from '@tanstack/react-router';
-import { MdKeyboardDoubleArrowLeft } from 'react-icons/md';
-import { Navigation } from 'src/styles/AboutPageStyles';
+import { createFileRoute } from '@tanstack/react-router';
+import { MdArrowBackIos } from 'react-icons/md';
+import { StyledLink } from 'src/styles/StyledLinks';
 import {
 	EigthItem,
 	EleventhItem,
@@ -34,11 +34,12 @@ function TimeLineComponent() {
 					<img src='/miika-laaksonen-unsplash.jpg ' alt='veganismus' />
 				</FirstItem>
 				<SecondItem>
-					<Navigation>
-						<Link to='/'>
-							<MdKeyboardDoubleArrowLeft size={30} />
-						</Link>
-					</Navigation>
+					<StyledLink to='/'>
+						<br />
+						<div style={{ display: 'flex', alignItems: 'center', color: 'black', marginTop: '30px', fontSize: '20px' }}>
+							<MdArrowBackIos fontSize={20} style={{ marginRight: '5px' }} /> Zurück zur Navigation
+						</div>
+					</StyledLink>
 					<p>
 						Veganismus ist ein Sammelbegriff, der in den 1940er Jahren geprägt wurde. Doch natürlich gab es bereits vor
 						diesem Begriff Menschen und Gruppen, die keine Tierprodukte konsumierten - hunderte Jahre vorher!
@@ -179,6 +180,12 @@ function TimeLineComponent() {
 						sich allein um das Wohl des Bienenvolkes kümmert und keinen eigenen Nutzen davon zieht, befindet man sich
 						wohl in einem Graubereich – darüber muss aber diskutiert werden.
 					</p>
+					<StyledLink to='/'>
+						<br />
+						<div style={{ display: 'flex', alignItems: 'center', color: 'black', marginTop: '30px', fontSize: '20px' }}>
+							<MdArrowBackIos fontSize={20} style={{ marginRight: '5px' }} /> Zurück zur Navigation
+						</div>
+					</StyledLink>
 				</FifteenthItem>
 				<SixteenthItem>
 					<h1>Wenn ich selbst aber glückliche Hühner halte, darf ich deren Eier essen, oder?</h1>

@@ -18,6 +18,7 @@ export const AboutUsContainer = styled(ImageContainer)`
 	width: 65%;
 	flex-direction: column;
 	padding: 0 40px;
+	margin-top: 0px;
 	p {
 		font-size: 20px;
 		margin: 0;
@@ -35,6 +36,7 @@ export const AboutUsContainer = styled(ImageContainer)`
 export const AboutSocialContainer = styled(SocialContainer)`
 	width: 35%;
 	justify-content: center;
+	margin-top: 0px;
 	img {
 		width: 90%;
 		height: 90%;
@@ -80,6 +82,7 @@ export const TextContainer = styled.div`
 export const AboutUpperContainer = styled(UpperContainer)`
 	@media screen and (max-width: 768px) {
 		flex-direction: column;
+		margin-bottom: 20px;
 	}
 `;
 

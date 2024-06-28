@@ -13,7 +13,7 @@
 import { Route as rootRoute } from './routes/__root'
 import { Route as VeganmeetupImport } from './routes/veganmeetup'
 import { Route as TimelineImport } from './routes/timeline'
-import { Route as RessourcesImport } from './routes/ressources'
+import { Route as ResourcesImport } from './routes/resources'
 import { Route as AboutImport } from './routes/about'
 import { Route as IndexImport } from './routes/index'
 import { Route as EventsEventidImport } from './routes/events.$eventid'
@@ -30,8 +30,8 @@ const TimelineRoute = TimelineImport.update({
   getParentRoute: () => rootRoute,
 } as any)
 
-const RessourcesRoute = RessourcesImport.update({
-  path: '/ressources',
+const ResourcesRoute = ResourcesImport.update({
+  path: '/resources',
   getParentRoute: () => rootRoute,
 } as any)
 
@@ -68,11 +68,11 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AboutImport
       parentRoute: typeof rootRoute
     }
-    '/ressources': {
-      id: '/ressources'
-      path: '/ressources'
-      fullPath: '/ressources'
-      preLoaderRoute: typeof RessourcesImport
+    '/resources': {
+      id: '/resources'
+      path: '/resources'
+      fullPath: '/resources'
+      preLoaderRoute: typeof ResourcesImport
       parentRoute: typeof rootRoute
     }
     '/timeline': {
@@ -104,7 +104,7 @@ declare module '@tanstack/react-router' {
 export const routeTree = rootRoute.addChildren({
   IndexRoute,
   AboutRoute,
-  RessourcesRoute,
+  ResourcesRoute,
   TimelineRoute,
   VeganmeetupRoute,
   EventsEventidRoute,
@@ -120,7 +120,7 @@ export const routeTree = rootRoute.addChildren({
       "children": [
         "/",
         "/about",
-        "/ressources",
+        "/resources",
         "/timeline",
         "/veganmeetup",
         "/events/$eventid"
@@ -132,8 +132,8 @@ export const routeTree = rootRoute.addChildren({
     "/about": {
       "filePath": "about.tsx"
     },
-    "/ressources": {
-      "filePath": "ressources.tsx"
+    "/resources": {
+      "filePath": "resources.tsx"
     },
     "/timeline": {
       "filePath": "timeline.tsx"

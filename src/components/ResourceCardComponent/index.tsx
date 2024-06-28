@@ -1,6 +1,6 @@
-import { CardContainer, Upper, Lower } from './styles';
+import { CardContainer, Lower, Upper } from './styles';
 
-const RessourceCardComponent = ({
+const ResourceCardComponent = ({
 	url,
 	image,
 	name,
@@ -28,4 +28,4 @@ const RessourceCardComponent = ({
 		</CardContainer>
 	);
 };
-export default RessourceCardComponent;
+export default ResourceCardComponent;
