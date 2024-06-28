@@ -2,23 +2,23 @@ import { Link, createFileRoute } from '@tanstack/react-router';
 import { MdKeyboardDoubleArrowLeft } from 'react-icons/md';
 import { Navigation } from 'src/styles/AboutPageStyles';
 import {
-	GridContainer,
-	FirstItem,
-	SecondItem,
-	ThirdItem,
-	FourthItem,
-	FifthItem,
-	SixthItem,
-	SeventhItem,
 	EigthItem,
-	NinthItem,
-	TenthItem,
 	EleventhItem,
-	TwelfthItem,
-	ThirteenthItem,
-	FourteenthItem,
 	FifteenthItem,
+	FifthItem,
+	FirstItem,
+	FourteenthItem,
+	FourthItem,
+	GridContainer,
+	NinthItem,
+	SecondItem,
+	SeventhItem,
 	SixteenthItem,
+	SixthItem,
+	TenthItem,
+	ThirdItem,
+	ThirteenthItem,
+	TwelfthItem,
 } from 'src/styles/TimelineStyles';
 import { PageContainer } from 'src/styles/VeganMeetupRouteStyles';
 
@@ -51,10 +51,10 @@ function TimeLineComponent() {
 					</p>
 				</ThirdItem>
 				<FourthItem>
-					<img src='/public/ahimsa-g97ce8c14e_1280.png' alt='Ahimsa' />
+					<img src='/ahimsa-g97ce8c14e_1280.png' alt='Ahimsa' />
 				</FourthItem>
 				<FifthItem>
-					<img src='/public/juno-jo-HTLD80hcFeg-unsplash.jpg' alt='writing' />
+					<img src='/juno-jo-HTLD80hcFeg-unsplash.jpg' alt='writing' />
 				</FifthItem>
 				<SixthItem>
 					<p>
@@ -89,10 +89,10 @@ function TimeLineComponent() {
 					</p>
 				</SeventhItem>
 				<EigthItem>
-					<img src='/public/vegan_trademark.jpg' alt='Vegan Trademark' />
+					<img src='/vegan_trademark.jpg' alt='Vegan Trademark' />
 				</EigthItem>
 				<NinthItem>
-					<img src='/public/money-g333e59075_1920.jpg' alt='' />
+					<img src='/money-g333e59075_1920.jpg' alt='' />
 				</NinthItem>
 				<TenthItem>
 					<p>
@@ -139,10 +139,10 @@ function TimeLineComponent() {
 					</p>
 				</EleventhItem>
 				<TwelfthItem>
-					<img src='/public/bvf.jpg' alt='Black Veg Fest' />
+					<img src='/bvf.jpg' alt='Black Veg Fest' />
 				</TwelfthItem>
 				<ThirteenthItem>
-					<img src='/public/WAM17307.jpg' alt='Donkey Sanctuary' />
+					<img src='/WAM17307.jpg' alt='Donkey Sanctuary' />
 				</ThirteenthItem>
 				<FourteenthItem>
 					<p>
