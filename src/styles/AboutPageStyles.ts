@@ -17,7 +17,7 @@ export const AboutLowerContainer = styled(LowerContainer)`
 export const AboutUsContainer = styled(ImageContainer)`
 	width: 65%;
 	flex-direction: column;
-	padding: 0 40px;
+	padding: 20px 40px;
 	margin-top: 0px;
 	p {
 		font-size: 20px;

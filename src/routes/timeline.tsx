@@ -180,12 +180,6 @@ function TimeLineComponent() {
 						sich allein um das Wohl des Bienenvolkes kümmert und keinen eigenen Nutzen davon zieht, befindet man sich
 						wohl in einem Graubereich – darüber muss aber diskutiert werden.
 					</p>
-					<StyledLink to='/'>
-						<br />
-						<div style={{ display: 'flex', alignItems: 'center', color: 'black', marginTop: '30px', fontSize: '20px' }}>
-							<MdArrowBackIos fontSize={20} style={{ marginRight: '5px' }} /> Zurück zur Navigation
-						</div>
-					</StyledLink>
 				</FifteenthItem>
 				<SixteenthItem>
 					<h1>Wenn ich selbst aber glückliche Hühner halte, darf ich deren Eier essen, oder?</h1>
@@ -206,6 +200,13 @@ function TimeLineComponent() {
 					</p>
 
 					<p>Wenn das einmal verstanden wird, stellt sich die Frage nach “glücklichen Eiern” nicht mehr.</p>
+
+					<StyledLink to='/'>
+						<br />
+						<div style={{ display: 'flex', alignItems: 'center', color: 'black', marginTop: '30px', fontSize: '20px' }}>
+							<MdArrowBackIos fontSize={20} style={{ marginRight: '5px' }} /> Zurück zur Navigation
+						</div>
+					</StyledLink>
 				</SixteenthItem>
 			</GridContainer>
 		</PageContainer>
