@@ -598,6 +598,7 @@ type Video {
 	name: String
 	thumbnail: Image
 	url: String
+	description: String
 }
 
 input VideoWhereUniqueInput {
@@ -612,18 +613,21 @@ input VideoWhereInput {
 	name: StringFilter
 	thumbnail: ImageWhereInput
 	url: StringFilter
+	description: StringFilter
 }
 
 input VideoOrderByInput {
 	id: OrderDirection
 	name: OrderDirection
 	url: OrderDirection
+	description: OrderDirection
 }
 
 input VideoUpdateInput {
 	name: String
 	thumbnail: ImageRelateToOneForUpdateInput
 	url: String
+	description: String
 }
 
 input VideoUpdateArgs {
@@ -635,6 +639,7 @@ input VideoCreateInput {
 	name: String
 	thumbnail: ImageRelateToOneForCreateInput
 	url: String
+	description: String
 }
 
 type Book {
@@ -643,6 +648,7 @@ type Book {
 	author: String
 	thumbnail: Image
 	url: String
+	description: String
 }
 
 input BookWhereUniqueInput {
@@ -659,6 +665,7 @@ input BookWhereInput {
 	author: StringFilter
 	thumbnail: ImageWhereInput
 	url: StringFilter
+	description: StringFilter
 }
 
 input BookOrderByInput {
@@ -666,6 +673,7 @@ input BookOrderByInput {
 	name: OrderDirection
 	author: OrderDirection
 	url: OrderDirection
+	description: OrderDirection
 }
 
 input BookUpdateInput {
@@ -673,6 +681,7 @@ input BookUpdateInput {
 	author: String
 	thumbnail: ImageRelateToOneForUpdateInput
 	url: String
+	description: String
 }
 
 input BookUpdateArgs {
@@ -685,6 +694,7 @@ input BookCreateInput {
 	author: String
 	thumbnail: ImageRelateToOneForCreateInput
 	url: String
+	description: String
 }
 
 """
