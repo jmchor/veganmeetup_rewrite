@@ -52,3 +52,68 @@ export const SINGLE_EVENT_QUERY = graphql(`
 		}
 	}
 `);
+
+export const ALL_ACTIVISTS_QUERY = graphql(`
+	query ALL_ACTIVISTS_QUERY {
+		activists {
+			id
+			url
+			thumbnail {
+				image {
+					publicUrlTransformed
+				}
+			}
+			name
+			description
+		}
+	}
+`);
+
+export const ALL_BOOKS_QUERY = graphql(`
+	query ALL_BOOKS_QUERY {
+		books {
+			id
+			author
+			name
+			description
+			thumbnail {
+				image {
+					publicUrlTransformed
+				}
+			}
+			url
+		}
+	}
+`);
+
+export const ALL_VIDEOS_QUERY = graphql(`
+	query ALL_VIDEOS_QUERY {
+		videos {
+			id
+			name
+			url
+			description
+			thumbnail {
+				image {
+					publicUrlTransformed
+				}
+			}
+		}
+	}
+`);
+
+export const ALL_PODCASTS_QUERY = graphql(`
+	query ALL_PODCASTS_QUERY {
+		podcasts {
+			url
+			thumbnail {
+				image {
+					publicUrlTransformed
+				}
+			}
+			name
+			id
+			description
+		}
+	}
+`);
