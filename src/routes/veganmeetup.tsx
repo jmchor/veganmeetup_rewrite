@@ -23,7 +23,7 @@ import {
 	SocialIconContainer,
 	SocialIcons,
 	UpperContainer,
-} from 'src/styles/VeganMeetupRouteStyles';
+} from 'src/styles/VeganMeetupRouteStyles.js';
 
 export const Route = createFileRoute('/veganmeetup')({
 	component: VeganMeetupPage,
@@ -68,25 +68,13 @@ function VeganMeetupPage() {
 						<MasonryContainer className='images'>
 							<ResponsiveMasonry columnsCountBreakPoints={{ 250: 1, 400: 2, 900: 3 }}>
 								<MasonryStyles gutter='10px'>
-									{/*{data?.images?.map((image) => (
+									{data?.images?.map((image) => (
 										<img
 											key={image?.id}
 											src={image?.image?.publicUrlTransformed as string}
 											alt={image?.alt as string}
 										/>
-									))}*/}
-									<img src='/1.jpg' alt='' />
-									<img src='/4.jpg' alt='' />
-									<img src='/3.jpg' alt='' />
-									<img src='/2.jpg' alt='' />
-									<img src='/4.jpg' alt='' />
-									<img src='/1.jpg' alt='' />
-									<img src='/4.jpg' alt='' />
-									<img src='/2.jpg' alt='' />
-									<img src='/4.jpg' alt='' />
-									<img src='/1.jpg' alt='' />
-									<img src='/3.jpg' alt='' />
-									<img src='/2.jpg' alt='' />
+									))}
 								</MasonryStyles>
 							</ResponsiveMasonry>
 						</MasonryContainer>
