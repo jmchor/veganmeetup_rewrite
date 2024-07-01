@@ -92,7 +92,7 @@ function VeganMeetupPage() {
 								<SocialIcons src='/Signal-Logo-Ultramarine.svg' alt='Signal Messenger Icon' />
 							</a>
 							<a href='https://www.instagram.com/veganmeetupmainz/' target='_blank'>
-								<Instagram src='/Instagram_Glyph_Gradient.svg' alt='Instagram Icon' />
+								<Instagram src='/Instagram_icon.png' alt='Instagram Icon' />
 							</a>
 							<a href='mailto:jchorzempa@posteo.de' target='_blank'>
 								<SocialIcons src='/email.png' alt='Email envelope Icon' />

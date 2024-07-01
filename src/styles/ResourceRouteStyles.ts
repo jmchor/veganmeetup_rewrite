@@ -16,9 +16,7 @@ export const RessourceNavigation = styled(Navigation)`
 	justify-content: center;
 	align-items: center;
 	background-color: #000000;
-	margin-top: 60px;
-	position: sticky;
-	top: 20px;
+	margin-top: 20px;
 
 	@media screen and (max-width: 768px) {
 		width: 96%;
@@ -31,16 +29,17 @@ export const AnnouncementContainer = styled.div`
 	border-radius: 10px;
 	width: 99%;
 	display: flex;
+	flex-direction: column;
 	justify-content: center;
 	align-items: center;
 	background-color: #ffffffda;
-	margin-top: 160px;
+
 	font-size: 20px;
 	font-weight: 900;
 	color: #000000;
 
 	@media screen and (max-width: 768px) {
 		width: 96%;
-		margin-top: 220px;
+		margin-top: 230px;
 	}
 `;

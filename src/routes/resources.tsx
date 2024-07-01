@@ -6,7 +6,7 @@ import { MdKeyboardDoubleArrowLeft } from 'react-icons/md';
 import { ResponsiveMasonry } from 'react-responsive-masonry';
 import ResourceCardComponent from 'src/components/ResourceCardComponent';
 import { ALL_ACTIVISTS_QUERY, ALL_BOOKS_QUERY, ALL_PODCASTS_QUERY, ALL_VIDEOS_QUERY } from 'src/gql/queries.js';
-import { AnnouncementContainer, RessourceMasonryStyles, RessourceNavigation } from 'src/styles/ResourceRouteStyles.js';
+import { AnnouncementContainer, RessourceMasonryStyles } from 'src/styles/ResourceRouteStyles.js';
 import { MasonryContainer, PageContainer } from 'src/styles/VeganMeetupRouteStyles.js';
 
 export const Route = createFileRoute('/resources')({
@@ -52,16 +52,14 @@ function ResourcesPage() {
 
 	return (
 		<PageContainer style={{ overflow: 'scroll', scrollbarWidth: 'none', flexDirection: 'column' }}>
-			<RessourceNavigation>
-				<Link to='/'>
-					<MdKeyboardDoubleArrowLeft size={25} style={{ color: 'white' }} />
-				</Link>
-			</RessourceNavigation>
 			<AnnouncementContainer>
 				<p>
 					Hier findet ihr Infos und hilfreiche Tips in Sachen Aktivismus - Gruppierungen, Bücher, Videomaterial und
 					Podcasts
 				</p>
+				<Link to='/'>
+					<MdKeyboardDoubleArrowLeft size={25} style={{ color: 'black' }} />
+				</Link>
 			</AnnouncementContainer>
 
 			<MasonryContainer className='images'>
