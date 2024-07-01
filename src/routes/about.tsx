@@ -12,6 +12,7 @@ import {
 } from 'src/styles/AboutPageStyles';
 import { StyledLink } from 'src/styles/StyledLinks';
 import { MainContainer, PageContainer } from 'src/styles/VeganMeetupRouteStyles';
+import styled from 'styled-components';
 
 export const Route = createFileRoute('/about')({
 	component: AboutPage,
@@ -83,3 +84,10 @@ function AboutPage() {
 		</>
 	);
 }
+
+export const AboutMainContainer = styled(MainContainer)`
+	gap: 20px;
+
+	@media screen and (max-width: 768px) {
+	}
+`;

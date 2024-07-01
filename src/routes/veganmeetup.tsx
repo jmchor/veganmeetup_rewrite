@@ -45,7 +45,7 @@ function VeganMeetupPage() {
 	}
 
 	return (
-		<PageContainer>
+		<PageContainer style={{ overflow: 'scroll', scrollbarWidth: 'none' }}>
 			<MainContainer>
 				<UpperContainer className='upperContainer'>
 					<EventContainer className='socialIcons'>

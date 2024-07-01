@@ -46,7 +46,26 @@ export const AboutSocialContainer = styled(SocialContainer)`
 	@media screen and (max-width: 768px) {
 		width: 90%;
 		height: 280px;
-		margin-top: 120px;
+		margin-top: 20px;
+	}
+
+	@media screen and (min-width: 481px) and (max-width: 768px) {
+		margin-top: 10rem;
+	}
+	@media screen and (min-width: 420px) and (max-width: 480px) {
+		margin-top: 22rem;
+	}
+
+	@media screen and (min-width: 381px) and (max-width: 419px) {
+		margin-top: 10rem;
+	}
+
+	@media screen and (min-width: 300px) and (max-width: 380px) {
+		margin-top: 55rem;
+	}
+
+	@media screen and (min-width: 481px) and (max-width: 768px) {
+		margin-top: 10rem;
 	}
 `;
 
@@ -90,5 +109,15 @@ export const AboutEventContainer = styled(EventContainer)`
 	@media screen and (max-width: 768px) {
 		width: 90%;
 		margin-top: 20px;
+	}
+	@media screen and (max-width: 480px) {
+		margin-top: 120px;
+	}
+
+	@media screen and (min-width: 380px) and (max-width: 480px) {
+		margin-top: 20px;
+	}
+	@media screen and (max-width: 375px) {
+		margin-top: 150px;
 	}
 `;
