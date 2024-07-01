@@ -1,4 +1,4 @@
-import { CardContainer, Lower, Upper } from './styles';
+import { CardContainer, Lower, Upper } from './styles.js';
 
 const ResourceCardComponent = ({
 	url,

@@ -2,11 +2,13 @@ import { useQuery } from '@apollo/client';
 import { Link, createFileRoute, useParams } from '@tanstack/react-router';
 import { AddToCalendarButton } from 'add-to-calendar-button-react';
 import { MdKeyboardDoubleArrowLeft } from 'react-icons/md';
-import { SINGLE_EVENT_QUERY } from 'src/gql/queries';
-import transformDateToArray from 'src/lib/transformDateToArray';
-import { Navigation, TextContainer } from 'src/styles/AboutPageStyles';
-import { EventContent, EventDetailContainer, ImageHeader } from 'src/styles/EventDetailStyles';
-import { PageContainer } from 'src/styles/VeganMeetupRouteStyles';
+
+import { SINGLE_EVENT_QUERY } from 'src/gql/queries.js';
+import transformDateToArray from 'src/lib/transformDateToArray.js';
+import { Navigation, TextContainer } from 'src/styles/AboutPageStyles.js';
+import { EventContent, EventDetailContainer, ImageHeader } from 'src/styles/EventDetailStyles.js';
+import { PageContainer } from 'src/styles/VeganMeetupRouteStyles.js';
+import styled from 'styled-components';
 
 export const Route = createFileRoute('/events/$eventid')({
 	component: EventPageComponent,
@@ -15,7 +17,7 @@ export const Route = createFileRoute('/events/$eventid')({
 function EventPageComponent() {
 	const eventId = useParams({ from: '/events/$eventid', select: (params) => params.eventid as string });
 
-	const { data } = useQuery(SINGLE_EVENT_QUERY, {
+	const { data, error } = useQuery(SINGLE_EVENT_QUERY, {
 		variables: {
 			where: {
 				id: eventId,
@@ -33,6 +35,10 @@ function EventPageComponent() {
 
 	if (data?.event) {
 		transformedDate = transformDateToArray(data?.event?.date as string);
+	}
+
+	if (error) {
+		<p>{error.message}</p>;
 	}
 
 	return (
@@ -66,13 +72,13 @@ function EventPageComponent() {
 						timeZone='Europe/Berlin'
 						location={data?.event?.location as string}
 					></AddToCalendarButton>
-					<TextContainer>
+					<EventDetailTextContainer>
 						{documentArray.map((item, index) => (
 							<p key={index}>{item.text}</p>
 						))}
-					</TextContainer>
+					</EventDetailTextContainer>
 				</EventContent>
-				<Navigation>
+				<Navigation style={{ marginBottom: '40px' }}>
 					<Link to='/veganmeetup'>
 						<MdKeyboardDoubleArrowLeft size={30} />
 					</Link>
@@ -81,3 +87,16 @@ function EventPageComponent() {
 		</PageContainer>
 	);
 }
+
+export const EventDetailTextContainer = styled(TextContainer)`
+	color: black;
+
+	p {
+		margin: 0;
+	}
+
+	@media screen and (max-width: 768px) {
+		width: 90%;
+		padding: 0;
+	}
+`;

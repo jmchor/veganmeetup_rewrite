@@ -6,8 +6,8 @@ import {
 	ResourceLinkContainer,
 	UpperLinkContainer,
 	VeganMeetupLinkContainer,
-} from 'src/styles/IndexPageStyles';
-import { Headline, MainContainer, PageContainer } from 'src/styles/VeganMeetupRouteStyles';
+} from 'src/styles/IndexPageStyles.js';
+import { Headline, MainContainer, PageContainer } from 'src/styles/VeganMeetupRouteStyles.js';
 
 export const Route = createFileRoute('/')({
 	component: LandingPage,

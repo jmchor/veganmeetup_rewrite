@@ -6,7 +6,7 @@ import {
 	MeetupContainer,
 	SocialContainer,
 	UpperContainer,
-} from './VeganMeetupRouteStyles';
+} from './VeganMeetupRouteStyles.js';
 
 export const AboutLowerContainer = styled(LowerContainer)`
 	@media screen and (max-width: 768px) {

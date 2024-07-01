@@ -4,8 +4,8 @@ import { MdArrowBackIos } from 'react-icons/md';
 import { ResponsiveMasonry } from 'react-responsive-masonry';
 
 import EventComponent from 'src/components/EventComponent';
-import { ALL_IMAGES_QUERY } from 'src/gql/queries';
-import { StyledLink } from 'src/styles/StyledLinks';
+import { ALL_IMAGES_QUERY } from 'src/gql/queries.js';
+import { StyledLink } from 'src/styles/StyledLinks.js';
 import {
 	EventContainer,
 	Headline,
@@ -29,7 +29,7 @@ export const Route = createFileRoute('/veganmeetup')({
 });
 
 function VeganMeetupPage() {
-	const { data } = useQuery(ALL_IMAGES_QUERY, {
+	const { data, error } = useQuery(ALL_IMAGES_QUERY, {
 		variables: {
 			where: {
 				category: {
@@ -38,6 +38,10 @@ function VeganMeetupPage() {
 			},
 		},
 	});
+
+	if (error) {
+		return <p>{error.message}</p>;
+	}
 
 	return (
 		<PageContainer>
@@ -92,9 +96,18 @@ function VeganMeetupPage() {
 							<h2>Sprecht mit uns!</h2>
 						</SocialHeadingContainer>
 						<SocialIconContainer>
-							<SocialIcons src='/Signal-Logo-Ultramarine.svg' alt='Signal Messenger Icon' />
-							<Instagram src='/Instagram_Glyph_Gradient.svg' alt='Instagram Icon' />
-							<SocialIcons src='/email.png' alt='Email envelope Icon' />
+							<a
+								href='https://signal.group/#CjQKINmQGFqKBFqTVpzDhQLlLG7Efrb-0TtepyRcX1h_p2XqEhCTbvDV1cILFZpqYGsp15SX'
+								target='_blank'
+							>
+								<SocialIcons src='/Signal-Logo-Ultramarine.svg' alt='Signal Messenger Icon' />
+							</a>
+							<a href='https://www.instagram.com/veganmeetupmainz/' target='_blank'>
+								<Instagram src='/Instagram_Glyph_Gradient.svg' alt='Instagram Icon' />
+							</a>
+							<a href='mailto:jchorzempa@posteo.de' target='_blank'>
+								<SocialIcons src='/email.png' alt='Email envelope Icon' />
+							</a>
 						</SocialIconContainer>
 					</SocialContainer>
 				</LowerContainer>

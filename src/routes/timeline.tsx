@@ -1,6 +1,6 @@
 import { createFileRoute } from '@tanstack/react-router';
 import { MdArrowBackIos } from 'react-icons/md';
-import { StyledLink } from 'src/styles/StyledLinks';
+import { StyledLink } from 'src/styles/StyledLinks.js';
 import {
 	EigthItem,
 	EleventhItem,
@@ -19,8 +19,8 @@ import {
 	ThirdItem,
 	ThirteenthItem,
 	TwelfthItem,
-} from 'src/styles/TimelineStyles';
-import { PageContainer } from 'src/styles/VeganMeetupRouteStyles';
+} from 'src/styles/TimelineStyles.js';
+import { PageContainer } from 'src/styles/VeganMeetupRouteStyles.js';
 
 export const Route = createFileRoute('/timeline')({
 	component: TimeLineComponent,

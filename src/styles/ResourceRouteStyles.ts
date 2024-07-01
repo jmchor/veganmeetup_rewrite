@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import { Navigation } from './AboutPageStyles';
-import { MasonryStyles } from './VeganMeetupRouteStyles';
+import { Navigation } from './AboutPageStyles.js';
+import { MasonryStyles } from './VeganMeetupRouteStyles.js';
 
 export const RessourceMasonryStyles = styled(MasonryStyles)`
 	height: 100%;

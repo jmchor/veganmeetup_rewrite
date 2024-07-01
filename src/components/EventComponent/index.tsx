@@ -1,7 +1,7 @@
 import { useQuery } from '@apollo/client';
-import { ALL_EVENTS_QUERY } from 'src/gql/queries';
-import transformDateToArray from 'src/lib/transformDateToArray';
-import { ComponentContainer, ContentContainer, DateContainer } from './styles';
+import { ALL_EVENTS_QUERY } from 'src/gql/queries.js';
+import transformDateToArray from 'src/lib/transformDateToArray.js';
+import { ComponentContainer, ContentContainer, DateContainer } from './styles.js';
 
 const EventComponent = () => {
 	const { data } = useQuery(ALL_EVENTS_QUERY, {

@@ -14,6 +14,7 @@ export const EventDetailContainer = styled.div`
 
 	@media screen and (max-width: 768px) {
 		width: 90%;
+		height: auto;
 	}
 `;
 
@@ -22,8 +23,9 @@ export const EventContent = styled.div`
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	gap: 20px;
+	gap: 10px;
 	height: 450px;
+	margin-top: 10px;
 	h1,
 	h2,
 	h3,
@@ -36,9 +38,9 @@ export const EventContent = styled.div`
 		font-size: 20px;
 		line-height: 1.5em;
 	}
-	padding: 40px;
 
 	@media screen and (max-width: 768px) {
+		width: 90%;
 		height: auto;
 	}
 `;

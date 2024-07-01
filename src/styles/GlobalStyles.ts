@@ -1,4 +1,3 @@
-import { Link } from '@tanstack/react-router';
 import { createGlobalStyle } from 'styled-components';
 
 export const GlobalStyles = createGlobalStyle`

@@ -4,9 +4,9 @@ import { useState } from 'react';
 import { MdKeyboardDoubleArrowLeft } from 'react-icons/md';
 import { ResponsiveMasonry } from 'react-responsive-masonry';
 import ResourceCardComponent from 'src/components/ResourceCardComponent';
-import { ALL_ACTIVISTS_QUERY, ALL_BOOKS_QUERY, ALL_PODCASTS_QUERY, ALL_VIDEOS_QUERY } from 'src/gql/queries';
-import { AnnouncementContainer, RessourceMasonryStyles, RessourceNavigation } from 'src/styles/ResourceRouteStyles';
-import { MasonryContainer, PageContainer } from 'src/styles/VeganMeetupRouteStyles';
+import { ALL_ACTIVISTS_QUERY, ALL_BOOKS_QUERY, ALL_PODCASTS_QUERY, ALL_VIDEOS_QUERY } from 'src/gql/queries.js';
+import { AnnouncementContainer, RessourceMasonryStyles, RessourceNavigation } from 'src/styles/ResourceRouteStyles.js';
+import { MasonryContainer, PageContainer } from 'src/styles/VeganMeetupRouteStyles.js';
 
 export const Route = createFileRoute('/resources')({
 	component: ResourcesPage,
@@ -23,27 +23,31 @@ interface BaseResource {
 
 function ResourcesPage() {
 	const [allDataArray, setAllDataArray] = useState<BaseResource[]>([]);
-	const { data: activistData } = useQuery(ALL_ACTIVISTS_QUERY, {
+	const { data: activistData, error } = useQuery(ALL_ACTIVISTS_QUERY, {
 		onCompleted: (data) => {
 			setAllDataArray((prev) => [...prev, ...(data?.activists as BaseResource[])] as BaseResource[]);
 		},
 	});
-	const { data: bookData } = useQuery(ALL_BOOKS_QUERY, {
+	const { data: bookData, error: bookError } = useQuery(ALL_BOOKS_QUERY, {
 		onCompleted: (data) => {
 			setAllDataArray((prev) => [...prev, ...(data?.books as BaseResource[])] as BaseResource[]);
 		},
 	});
 
-	const { data: podcastData } = useQuery(ALL_PODCASTS_QUERY, {
+	const { data: podcastData, error: podcastError } = useQuery(ALL_PODCASTS_QUERY, {
 		onCompleted: (data) => {
 			setAllDataArray((prev) => [...prev, ...(data?.podcasts as BaseResource[])] as BaseResource[]);
 		},
 	});
-	const { data: videoData } = useQuery(ALL_VIDEOS_QUERY, {
+	const { data: videoData, error: videoError } = useQuery(ALL_VIDEOS_QUERY, {
 		onCompleted: (data) => {
 			setAllDataArray((prev) => [...prev, ...(data?.videos as BaseResource[])] as BaseResource[]);
 		},
 	});
+
+	if (error || bookError || podcastError || videoError) {
+		return <p>{error?.message || bookError?.message || podcastError?.message || videoError?.message}</p>;
+	}
 
 	return (
 		<PageContainer style={{ overflow: 'scroll', scrollbarWidth: 'none', flexDirection: 'column' }}>
