@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import { useQuery } from '@apollo/client';
 import { createFileRoute } from '@tanstack/react-router';
 import { MdArrowBackIos } from 'react-icons/md';

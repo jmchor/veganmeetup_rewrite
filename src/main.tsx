@@ -6,9 +6,6 @@ import { routeTree } from './routeTree.gen';
 import { ApolloClient, ApolloProvider, InMemoryCache } from '@apollo/client';
 import createUploadLink from 'apollo-upload-client/createUploadLink.mjs';
 
-import { register } from '@public-ui/components';
-import { defineCustomElements } from '@public-ui/components/dist/loader';
-import { DEFAULT } from '@public-ui/themes';
 import { StrictMode } from 'react';
 
 const router = createRouter({
@@ -35,14 +32,10 @@ const client = new ApolloClient({
 	link,
 });
 
-register(DEFAULT, defineCustomElements)
-	.then(() => {
-		ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
-			<StrictMode>
-				<ApolloProvider client={client}>
-					<RouterProvider router={router} />
-				</ApolloProvider>
-			</StrictMode>
-		);
-	})
-	.catch(console.warn);
+ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
+	<StrictMode>
+		<ApolloProvider client={client}>
+			<RouterProvider router={router} />
+		</ApolloProvider>
+	</StrictMode>
+);
