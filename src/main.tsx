@@ -20,7 +20,7 @@ declare module '@tanstack/react-router' {
 }
 
 const link = createUploadLink({
-	uri: 'http://localhost:3000/api/graphql',
+	uri: 'https://rewrite-backend.veganmeetup-mainz.de/api/graphql',
 	credentials: 'include',
 	headers: {
 		'Apollo-Require-Preflight': 'true',
