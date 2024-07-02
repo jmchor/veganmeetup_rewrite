@@ -20,7 +20,7 @@ function LandingPage() {
 				<MainContainer>
 					<UpperLinkContainer className='upperContainer'>
 						<HistoryLinkContainer to='/timeline'>
-							<Headline>Geschichte</Headline>
+							<Headline>Mehr über Veganismus</Headline>
 						</HistoryLinkContainer>
 						<VeganMeetupLinkContainer to='/veganmeetup'>
 							<Headline>Vegan Meetup Mainz</Headline>

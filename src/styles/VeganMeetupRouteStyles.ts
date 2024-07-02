@@ -19,6 +19,7 @@ export const BigTile = styled.div`
 export const Headline = styled.h1`
 	font-size: 50px;
 	color: white;
+	text-align: center;
 
 	@media screen and (max-width: 768px) {
 		font-size: 30px;
