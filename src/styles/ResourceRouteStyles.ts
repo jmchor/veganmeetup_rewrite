@@ -24,7 +24,7 @@ export const RessourceNavigation = styled(Navigation)`
 `;
 
 export const AnnouncementContainer = styled.div`
-	margin: 0;
+	margin: 10px auto 0px auto;
 	padding: 20px;
 	border-radius: 10px;
 	width: 99%;
@@ -40,6 +40,5 @@ export const AnnouncementContainer = styled.div`
 
 	@media screen and (max-width: 768px) {
 		width: 96%;
-		margin-top: 230px;
 	}
 `;

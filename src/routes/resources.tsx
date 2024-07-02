@@ -52,33 +52,40 @@ function ResourcesPage() {
 
 	return (
 		<PageContainer style={{ overflow: 'scroll', scrollbarWidth: 'none', flexDirection: 'column' }}>
-			<AnnouncementContainer>
-				<p>
-					Hier findet ihr Infos und hilfreiche Tips in Sachen Aktivismus - Gruppierungen, Bücher, Videomaterial und
-					Podcasts
-				</p>
-				<Link to='/'>
-					<MdKeyboardDoubleArrowLeft size={25} style={{ color: 'black' }} />
-				</Link>
-			</AnnouncementContainer>
+			<div
+				style={{
+					width: '100%',
+					height: '100%',
+				}}
+			>
+				<AnnouncementContainer>
+					<p>
+						Hier findet ihr Infos und hilfreiche Tips in Sachen Aktivismus - Gruppierungen, Bücher, Videomaterial und
+						Podcasts
+					</p>
+					<Link to='/'>
+						<MdKeyboardDoubleArrowLeft size={25} style={{ color: 'black' }} />
+					</Link>
+				</AnnouncementContainer>
 
-			<MasonryContainer className='images'>
-				<ResponsiveMasonry columnsCountBreakPoints={{ 250: 1, 400: 2, 900: 4 }}>
-					<RessourceMasonryStyles gutter='10px'>
-						{allDataArray.length > 0 &&
-							allDataArray.map((item) => (
-								<ResourceCardComponent
-									key={item.id}
-									url={item.url as string}
-									image={item?.thumbnail?.image?.publicUrlTransformed as string}
-									name={item.name as string}
-									description={item.description as string}
-									author={item.author as string}
-								/>
-							))}
-					</RessourceMasonryStyles>
-				</ResponsiveMasonry>
-			</MasonryContainer>
+				<MasonryContainer className='images'>
+					<ResponsiveMasonry columnsCountBreakPoints={{ 250: 1, 400: 2, 900: 4 }}>
+						<RessourceMasonryStyles gutter='10px'>
+							{allDataArray.length > 0 &&
+								allDataArray.map((item) => (
+									<ResourceCardComponent
+										key={item.id}
+										url={item.url as string}
+										image={item?.thumbnail?.image?.publicUrlTransformed as string}
+										name={item.name as string}
+										description={item.description as string}
+										author={item.author as string}
+									/>
+								))}
+						</RessourceMasonryStyles>
+					</ResponsiveMasonry>
+				</MasonryContainer>
+			</div>
 		</PageContainer>
 	);
 }
