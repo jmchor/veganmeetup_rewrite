@@ -44,7 +44,8 @@ export const HistoryLinkContainer = styled(Link)`
 
 	@media screen and (max-width: 768px) {
 		width: 90%;
-		margin-top: 20px;
+		margin: 20px auto 20px auto;
+		height: 110px;
 	}
 `;
 
@@ -63,8 +64,8 @@ export const VeganMeetupLinkContainer = styled(Link)`
 
 	@media screen and (max-width: 768px) {
 		width: 90%;
-		margin: 20px;
-		min-height: 200px;
+		margin: 0px auto 20px auto;
+		min-height: 180px;
 	}
 `;
 
