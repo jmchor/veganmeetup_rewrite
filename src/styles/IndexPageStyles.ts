@@ -64,6 +64,7 @@ export const VeganMeetupLinkContainer = styled(Link)`
 	@media screen and (max-width: 768px) {
 		width: 90%;
 		margin: 20px;
+		min-height: 200px;
 	}
 `;
 
@@ -82,7 +83,7 @@ export const AboutLinkContainer = styled(Link)`
 
 	@media screen and (max-width: 768px) {
 		width: 90%;
-		height: 280px;
+		height: auto;
 	}
 `;
 
@@ -100,7 +101,7 @@ export const ResourceLinkContainer = styled(Link)`
 
 	@media screen and (max-width: 768px) {
 		width: 90%;
-		height: 280px;
+		height: auto;
 		margin: 0px 20px 20px 20px;
 	}
 `;
