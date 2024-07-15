@@ -1,11 +1,11 @@
 import { createFileRoute } from '@tanstack/react-router';
 import {
-	MainGrid,
-	HistoryElement,
-	VeganMeetupElement,
 	AboutElement,
+	HistoryElement,
+	MainGrid,
 	ResourcesElement,
 	Signatureelement,
+	VeganMeetupElement,
 } from 'src/styles/IndexPageStyles';
 import { Headline, PageContainer } from 'src/styles/VeganMeetupRouteStyles.js';
 
