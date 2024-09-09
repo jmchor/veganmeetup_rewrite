@@ -39,6 +39,7 @@ type Image = {
 
 function VeganMeetupPage() {
 	const [masonryImages, setMasonryImages] = useState<Image[]>([]);
+	const [shuffledImages, setShuffledImages] = useState<Image[]>([]);
 	const { data, error } = useQuery(ALL_IMAGES_QUERY, {
 		variables: {
 			where: {
@@ -47,6 +48,7 @@ function VeganMeetupPage() {
 				},
 			},
 		},
+
 		onCompleted: (data) => {
 			setMasonryImages(data?.images as Image[]);
 		},
@@ -61,8 +63,8 @@ function VeganMeetupPage() {
 		return newArray;
 	}
 	useEffect(() => {
-		setMasonryImages(shuffleArray(masonryImages));
-	}, []);
+		setShuffledImages(shuffleArray(masonryImages));
+	}, [masonryImages]);
 
 	if (error) {
 		return <p>{error.message}</p>;
@@ -92,7 +94,7 @@ function VeganMeetupPage() {
 						<MasonryContainer className='images'>
 							<ResponsiveMasonry columnsCountBreakPoints={{ 250: 1, 400: 2, 900: 3 }}>
 								<MasonryStyles gutter='10px'>
-									{masonryImages.map((image) => (
+									{shuffledImages.map((image) => (
 										<img
 											key={image?.id}
 											src={image?.image?.publicUrlTransformed as string}
