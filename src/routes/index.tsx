@@ -1,11 +1,11 @@
 import { createFileRoute } from '@tanstack/react-router';
 import {
-	MainGrid,
-	HistoryElement,
-	VeganMeetupElement,
 	AboutElement,
+	HistoryElement,
+	MainGrid,
 	ResourcesElement,
 	Signatureelement,
+	VeganMeetupElement,
 } from 'src/styles/IndexPageStyles';
 import { Headline, PageContainer } from 'src/styles/VeganMeetupRouteStyles.js';
 
@@ -28,7 +28,7 @@ function LandingPage() {
 						<Headline>Über uns</Headline>
 					</AboutElement>
 					<ResourcesElement to='/resources'>
-						<Headline>Ressourcen</Headline>
+						<Headline>Aktivisti & Ressourcen</Headline>
 					</ResourcesElement>
 					<Signatureelement>© jxor 2023 - 2024</Signatureelement>
 				</MainGrid>
