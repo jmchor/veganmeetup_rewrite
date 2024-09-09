@@ -13,8 +13,8 @@ export const ALL_IMAGES_QUERY = graphql(`
 `);
 
 export const ALL_EVENTS_QUERY = graphql(`
-	query ALL_EVENTS_QUERY($orderBy: [EventOrderByInput!]!) {
-		events(orderBy: $orderBy) {
+	query ALL_EVENTS_QUERY($orderBy: [EventOrderByInput!]!, $where: EventWhereInput!) {
+		events(orderBy: $orderBy, where: $where) {
 			id
 			title
 			date

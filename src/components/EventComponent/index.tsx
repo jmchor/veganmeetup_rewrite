@@ -6,9 +6,14 @@ import { ComponentContainer, ContentContainer, DateContainer } from './styles.js
 const EventComponent = () => {
 	const { data } = useQuery(ALL_EVENTS_QUERY, {
 		variables: {
+			where: {
+				pastEvent: {
+					equals: false,
+				},
+			},
 			orderBy: [
 				{
-					date: 'asc',
+					date: 'desc',
 				},
 			],
 		},
@@ -19,6 +24,8 @@ const EventComponent = () => {
 	if (data?.events && data?.events.length > 0) {
 		transformedDate = transformDateToArray(data?.events[0].date as string);
 	}
+
+	console.log(data);
 
 	return (
 		<>

@@ -21,9 +21,10 @@ function AboutPage() {
 					<h1>Was ist ein Meetup?</h1>
 					<p>
 						Der Vegan Meetup - zu Deutsch, der Vegan-Treff - ist eine Gruppe für Veganer:Innen, die sich gerne gemeinsam
-						treffen, gemeinsam kochen, essen und allgemein austauschen. Zweimal im Monat, mal unter der Woche, mal an
-						einem Sonntag, treffen wir uns im Community-Raum des "kreuzpunkt im Viertel" in Mainz. Es gibt genügend
-						Platz, ist kinder- und tierfreundlich, es gibt eine Küche und es sind immer (!) freundliche Menschen da.
+						treffen, gemeinsam kochen, essen, austauschen und auch mal gemeinsam etwas unternehmen. Am ersten Sonntag im
+						Monat treffen wir uns im Community-Raum des "kreuzpunkt im Viertel" in Mainz zum Mitbringbrunch. Es gibt
+						genügend Platz, ist kinder- und tierfreundlich, es gibt eine Küche und es sind immer (!) freundliche
+						Menschen da.
 					</p>
 					<p>
 						Das Meetup funktioniert wie ein Mitbring-Buffet - alle bringen etwas mit, egal ob fertige Gerichte oder

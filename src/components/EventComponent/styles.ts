@@ -7,6 +7,10 @@ export const ComponentContainer = styled(Link)`
 	width: 100%;
 	text-decoration: none;
 	color: black;
+
+	h1 {
+		text-align: center;
+	}
 	@media screen and (max-width: 900px) {
 		flex-direction: column;
 	}

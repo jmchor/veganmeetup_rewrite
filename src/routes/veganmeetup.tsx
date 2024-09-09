@@ -94,6 +94,9 @@ function VeganMeetupPage() {
 							<a href='https://www.instagram.com/veganmeetupmainz/' target='_blank'>
 								<Instagram src='/Instagram_icon.png' alt='Instagram Icon' />
 							</a>
+							<a href='https://www.facebook.com/profile.php?id=61565439217123' target='_blank'>
+								<SocialIcons src='/facebook.png' alt='Facebook Icon' />
+							</a>
 							<a href='mailto:jchorzempa@posteo.de' target='_blank'>
 								<SocialIcons src='/email.png' alt='Email envelope Icon' />
 							</a>

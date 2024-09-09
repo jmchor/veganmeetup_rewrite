@@ -157,7 +157,7 @@ export const SocialIconContainer = styled.div`
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
-	gap: 50px;
+	gap: 20px;
 	height: 50px;
 	flex: 1;
 
