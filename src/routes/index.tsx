@@ -28,7 +28,7 @@ function LandingPage() {
 						<Headline>Über uns</Headline>
 					</AboutElement>
 					<ResourcesElement to='/resources'>
-						<Headline>Ressourcen</Headline>
+						<Headline>Aktivisti & Ressourcen</Headline>
 					</ResourcesElement>
 					<Signatureelement>© jxor 2023 - 2024</Signatureelement>
 				</MainGrid>

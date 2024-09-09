@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import { useQuery } from '@apollo/client';
 import { createFileRoute } from '@tanstack/react-router';
+import { useEffect, useState } from 'react';
 import { MdArrowBackIos } from 'react-icons/md';
 import { ResponsiveMasonry } from 'react-responsive-masonry';
 
@@ -29,7 +30,15 @@ export const Route = createFileRoute('/veganmeetup')({
 	component: VeganMeetupPage,
 });
 
+type Image = {
+	id: string;
+	image: { publicUrlTransformed: string; __typename: string };
+	alt: string;
+	__typename: string;
+};
+
 function VeganMeetupPage() {
+	const [masonryImages, setMasonryImages] = useState<Image[]>([]);
 	const { data, error } = useQuery(ALL_IMAGES_QUERY, {
 		variables: {
 			where: {
@@ -38,7 +47,22 @@ function VeganMeetupPage() {
 				},
 			},
 		},
+		onCompleted: (data) => {
+			setMasonryImages(data?.images as Image[]);
+		},
 	});
+
+	function shuffleArray<T>(array: readonly T[]): T[] {
+		const newArray = array.slice(); // Create a mutable copy
+		for (let i = newArray.length - 1; i > 0; i--) {
+			const j = Math.floor(Math.random() * (i + 1));
+			[newArray[i], newArray[j]] = [newArray[j], newArray[i]];
+		}
+		return newArray;
+	}
+	useEffect(() => {
+		setMasonryImages(shuffleArray(masonryImages));
+	}, []);
 
 	if (error) {
 		return <p>{error.message}</p>;
@@ -68,7 +92,7 @@ function VeganMeetupPage() {
 						<MasonryContainer className='images'>
 							<ResponsiveMasonry columnsCountBreakPoints={{ 250: 1, 400: 2, 900: 3 }}>
 								<MasonryStyles gutter='10px'>
-									{data?.images?.map((image) => (
+									{masonryImages.map((image) => (
 										<img
 											key={image?.id}
 											src={image?.image?.publicUrlTransformed as string}
@@ -93,6 +117,9 @@ function VeganMeetupPage() {
 							</a>
 							<a href='https://www.instagram.com/veganmeetupmainz/' target='_blank'>
 								<Instagram src='/Instagram_icon.png' alt='Instagram Icon' />
+							</a>
+							<a href='https://www.facebook.com/profile.php?id=61565439217123' target='_blank'>
+								<SocialIcons src='/facebook.png' alt='Facebook Icon' />
 							</a>
 							<a href='mailto:jchorzempa@posteo.de' target='_blank'>
 								<SocialIcons src='/email.png' alt='Email envelope Icon' />

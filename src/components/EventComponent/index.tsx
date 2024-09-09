@@ -13,7 +13,7 @@ const EventComponent = () => {
 			},
 			orderBy: [
 				{
-					date: 'asc',
+					date: 'desc',
 				},
 			],
 		},
@@ -24,6 +24,8 @@ const EventComponent = () => {
 	if (data?.events && data?.events.length > 0) {
 		transformedDate = transformDateToArray(data?.events[0].date as string);
 	}
+
+	console.log(data);
 
 	return (
 		<>
