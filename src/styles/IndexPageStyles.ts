@@ -45,14 +45,24 @@ export const VeganMeetupElement = styled(BaseElement)`
 		grid-row: 4 / span 4;
 	}
 `;
+export const MapElement = styled(BaseElement)`
+	grid-column: 1 / span 1;
+	grid-row: 8 / span 7;
+	background-color: green;
+
+	@media screen and (min-width: 320px) and (max-width: 768px) {
+		grid-column: 1 / span 5;
+		grid-row: 8 / span 2;
+	}
+`;
 export const AboutElement = styled(BaseElement)`
-	grid-column: 1 / span 3;
+	grid-column: 2 / span 2;
 	grid-row: 8 / span 7;
 	background-color: #9d9d9ddf;
 
 	@media screen and (min-width: 320px) and (max-width: 768px) {
 		grid-column: 1 / span 5;
-		grid-row: 8 / span 4;
+		grid-row: 10 / span 2;
 	}
 `;
 export const ResourcesElement = styled(BaseElement)`
