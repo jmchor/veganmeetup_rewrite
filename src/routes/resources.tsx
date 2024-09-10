@@ -69,7 +69,7 @@ function ResourcesPage() {
 				</AnnouncementContainer>
 
 				<MasonryContainer className='images'>
-					<ResponsiveMasonry columnsCountBreakPoints={{ 250: 1, 400: 2, 900: 4 }}>
+					<ResponsiveMasonry columnsCountBreakPoints={{ 250: 1, 450: 2, 900: 4 }}>
 						<RessourceMasonryStyles gutter='10px'>
 							{allDataArray.length > 0 &&
 								allDataArray.map((item) => (

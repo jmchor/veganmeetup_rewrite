@@ -3,6 +3,7 @@ import {
 	AboutElement,
 	HistoryElement,
 	MainGrid,
+	MapElement,
 	ResourcesElement,
 	Signatureelement,
 	VeganMeetupElement,
@@ -27,6 +28,9 @@ function LandingPage() {
 					<AboutElement to='/about'>
 						<Headline>Über uns</Headline>
 					</AboutElement>
+					<MapElement to='/map'>
+						<Headline>Vegane Karte</Headline>
+					</MapElement>
 					<ResourcesElement to='/resources'>
 						<Headline>Aktivisti & Ressourcen</Headline>
 					</ResourcesElement>
