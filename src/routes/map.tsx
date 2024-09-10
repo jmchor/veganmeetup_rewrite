@@ -14,6 +14,12 @@ function Map() {
 		<>
 			<PageContainer>
 				<MapMainGrid>
+					<DescriptionElement>
+						<p>
+							Eine Karte von wichtigen Standorten - Vegantreffs, Lebenshöfe, Projekte und Veranstaltungen - more coming
+							soon!
+						</p>
+					</DescriptionElement>
 					<MapElement className='map'>
 						<MapComponent />
 					</MapElement>
@@ -50,9 +56,20 @@ const BaseElement = styled.div`
 	text-decoration: none;
 `;
 
+const DescriptionElement = styled(BaseElement)`
+	grid-column: 1 / span 5;
+	grid-row: 1 / span 2;
+	border-radius: 10px;
+	border: 1px solid white;
+	background-color: #ffffffda;
+	color: black;
+
+	padding: 10px;
+`;
+
 const MapElement = styled(BaseElement)`
 	grid-column: 1 / span 5;
-	grid-row: 1 / span 15;
+	grid-row: 3 / span 13;
 	border-radius: 10px;
 	border: 1px solid white;
 `;
