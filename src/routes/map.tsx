@@ -64,7 +64,16 @@ const DescriptionElement = styled(BaseElement)`
 	background-color: #ffffffda;
 	color: black;
 
-	padding: 10px;
+	padding: 15px;
+	p {
+		text-align: center;
+	}
+
+	@media screen and (max-width: 768px) {
+		p {
+			font-size: 14px;
+		}
+	}
 `;
 
 const MapElement = styled(BaseElement)`
