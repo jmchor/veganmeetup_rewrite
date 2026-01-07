@@ -5,9 +5,17 @@ import { MdKeyboardDoubleArrowLeft } from 'react-icons/md';
 
 import { SINGLE_EVENT_QUERY } from 'src/gql/queries.js';
 import transformDateToArray from 'src/lib/transformDateToArray.js';
-import { Navigation, TextContainer } from 'src/styles/AboutPageStyles.js';
-import { EventContent, EventDetailContainer, ImageHeader } from 'src/styles/EventDetailStyles.js';
-import { PageContainer } from 'src/styles/VeganMeetupRouteStyles.js';
+import { TextContainer } from 'src/styles/AboutPageStyles.js';
+import {
+	EventContent,
+	EventDetailContainer,
+	EventNavigation,
+	EventPageContainer,
+	ImageHeader,
+	ImageHeaderMobile,
+	InnerContent,
+	LeftSidebar,
+} from 'src/styles/EventDetailStyles.js';
 import styled from 'styled-components';
 
 export const Route = createFileRoute('/events/$eventid')({
@@ -42,49 +50,48 @@ function EventPageComponent() {
 	}
 
 	return (
-		<PageContainer>
+		<EventPageContainer>
 			<EventDetailContainer>
-				<ImageHeader>
-					{' '}
-					<img
-						src={data?.event?.headerImage?.image?.publicUrlTransformed as string}
-						alt='Event Header Image'
-						width='100%'
-						height='100%'
-						style={{ objectFit: 'cover', borderRadius: '10px 10px 0 0' }}
-					/>
-				</ImageHeader>
+				<LeftSidebar>
+					<ImageHeader>
+						<img src={data?.event?.headerImage?.image?.publicUrlTransformed} alt='Event Header Image' />
+					</ImageHeader>
+				</LeftSidebar>
+
 				<EventContent>
-					<h1>{data?.event?.title}</h1>
-					<h4>
-						Wann: {transformedDate[0]} {transformedDate[1]} {transformedDate[2]}
-					</h4>
-					<h4>
-						Von {data?.event?.from} Uhr - {data?.event?.until} Uhr
-					</h4>
-					<h4>Wo: {data?.event?.location}</h4>
-					<AddToCalendarButton
-						name={data?.event?.title as string}
-						startDate={data?.event?.date as string}
-						startTime={data?.event?.from as string}
-						endTime={data?.event?.until as string}
-						options={['Apple', 'Google', 'Yahoo', 'iCal']}
-						timeZone='Europe/Berlin'
-						location={data?.event?.location as string}
-					></AddToCalendarButton>
-					<EventDetailTextContainer>
-						{documentArray.map((item, index) => (
-							<p key={index}>{item.text}</p>
-						))}
-					</EventDetailTextContainer>
+					<EventNavigation>
+						<Link to='/veganmeetup'>
+							<MdKeyboardDoubleArrowLeft size={30} />
+						</Link>
+					</EventNavigation>
+					<InnerContent>
+						<ImageHeaderMobile>
+							<img src={data?.event?.headerImage?.image?.publicUrlTransformed} alt='Event Header Image' />
+						</ImageHeaderMobile>
+						<h1>{data?.event?.title}</h1>
+						<h4>Wann: {transformedDate.join(' ')}</h4>
+						<h4>
+							Von {data?.event?.from} Uhr - {data?.event?.until} Uhr
+						</h4>
+						<h4>Wo: {data?.event?.location}</h4>
+						<AddToCalendarButton
+							name={data?.event?.title as string}
+							startDate={data?.event?.date as string}
+							startTime={data?.event?.from as string}
+							endTime={data?.event?.until as string}
+							options={['Apple', 'Google', 'Yahoo', 'iCal']}
+							timeZone='Europe/Berlin'
+							location={data?.event?.location as string}
+						></AddToCalendarButton>
+						<EventDetailTextContainer>
+							{documentArray.map((item, index) => (
+								<p key={index}>{item.text}</p>
+							))}
+						</EventDetailTextContainer>
+					</InnerContent>
 				</EventContent>
-				<Navigation style={{ marginBottom: '40px' }}>
-					<Link to='/veganmeetup'>
-						<MdKeyboardDoubleArrowLeft size={30} />
-					</Link>
-				</Navigation>
 			</EventDetailContainer>
-		</PageContainer>
+		</EventPageContainer>
 	);
 }
 

@@ -22,10 +22,11 @@ body {
 	margin: 0;
     padding:0;
 	/* background-image: linear-gradient(60deg, #64b3f4 0%, #c2e59c 100%); */
-	background: url('/miika-laaksonen-unsplash.jpg') no-repeat 12% 70%;
+	/* background: url('/miika-laaksonen-unsplash.jpg') no-repeat 12% 70%; */
+	background-color: #ff9704;
 	background-repeat: no-repeat;
 	height: 100vh;
-	overflow-y: hidden;
+	/* overflow-y: hidden; */
 
 
 
