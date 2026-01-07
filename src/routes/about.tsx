@@ -68,7 +68,7 @@ export const AboutBaseItem = styled.div`
 	background-color: #ffffffe0;
 	padding: 20px;
 	height: auto;
-	max-height: fit-content;
+
 	display: flex;
 	justify-content: center;
 	align-items: center;
