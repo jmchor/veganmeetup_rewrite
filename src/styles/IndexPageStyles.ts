@@ -38,7 +38,7 @@ export const HistoryElement = styled(BaseElement)`
 export const VeganMeetupElement = styled(BaseElement)`
 	grid-column: 3 / span 3;
 	grid-row: 1 / span 7;
-	background-color: #12b6e3fb;
+	background-color: var(--orange);
 
 	@media screen and (min-width: 320px) and (max-width: 768px) {
 		grid-column: 1 / span 5;

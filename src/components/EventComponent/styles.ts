@@ -24,7 +24,7 @@ export const DateContainer = styled.div`
 	height: 100%;
 	flex: 1;
 	gap: 30px;
-	background-color: #9cdff3;
+	background-color: var(--lightOrange);
 
 	flex-direction: column;
 

@@ -107,7 +107,7 @@ export const FirstItem = styled(AboutBaseItem)`
 export const SecondItem = styled(AboutBaseItem)`
 	grid-column: 3 / span 4;
 	grid-row: 1;
-	background-color: #12b6e3fb;
+	background-color: var(--orange);
 	color: white;
 	padding: 20px;
 	h1 {

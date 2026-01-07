@@ -65,7 +65,7 @@ export const EventContainer = styled.div`
 
 export const MeetupContainer = styled.div`
 	border-radius: 10px;
-	background-color: #12b6e3fb;
+	background-color: var(--orange);
 	display: flex;
 	flex-direction: column;
 	height: auto;
@@ -139,7 +139,7 @@ export const SocialHeadingContainer = styled.div`
 	justify-content: center;
 	align-items: center;
 	display: flex;
-	background-color: #12b6e3fb;
+	background-color: var(--orange);
 	text-align: center;
 	padding: 20px;
 

@@ -5,8 +5,11 @@ export const GlobalStyles = createGlobalStyle`
 html {
 	--red: #ff0000;
 	--blue: #61A7DB;
-	--lightBlue: #B6E2F6 ;
+	--lightBlue: #9cdff3 ;
 	--lighterGrey: #DCE2E5;
+	--differentBlue: #12b6e3fb;
+	--orange: #ff9704;
+	--lightOrange: #fcb24aff;
 
 	/* --maxwidth: 1000px; */
 	--bs: 0 12px 24px 0 rgba(0,0,0,0.09);
