@@ -1,4 +1,5 @@
 import { createFileRoute } from '@tanstack/react-router';
+import { getYear } from 'src/lib/getYear';
 import {
 	AboutElement,
 	HistoryElement,
@@ -34,7 +35,7 @@ function LandingPage() {
 					<ResourcesElement to='/resources'>
 						<Headline>Aktivisti & Ressourcen</Headline>
 					</ResourcesElement>
-					<Signatureelement>© jxor 2023 - 2024</Signatureelement>
+					<Signatureelement>© jxor 2023 - {getYear()}</Signatureelement>
 				</MainGrid>
 			</PageContainer>
 		</>
