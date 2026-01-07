@@ -10,6 +10,10 @@ html {
 	--differentBlue: #12b6e3fb;
 	--orange: #ff9704;
 	--lightOrange: #fcb24aff;
+	--green: #2b7530;
+	--grey: #9d9d9ddf;
+	--orangeRed: #db552b;
+	--white: #ffffff;
 
 	/* --maxwidth: 1000px; */
 	--bs: 0 12px 24px 0 rgba(0,0,0,0.09);

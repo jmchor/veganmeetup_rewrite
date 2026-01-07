@@ -66,7 +66,21 @@ export const sanctuaries = [
 		position: [49.698508, 9.256435],
 		title: 'Veganer Mitbringbrunch Miltenberg',
 		address: 'Stadtpark, Burgweg 51, 63897 Miltenberg',
-		link: 'https://www.facebook.com/p/Veganer-Mitbringbrunch-Miltenberg-100039382483005/',
+		link: 'https://vegan-miltenberg.de/mitbringbrunch/',
+		icon: 'blue',
+	},
+	{
+		position: [49.811638741439225, 9.147991560536498],
+		title: 'Erlenbacher Veganer Mitbring-Brunch',
+		address: 'Liebigstraße 49, 63906 Erlenbach am Main',
+		link: 'https://vegan-miltenberg.de/veganbrunch-erlenbach/',
+		icon: 'blue',
+	},
+	{
+		position: [49.842607929424005, 9.161374609669211],
+		title: 'Veganer Mitbringbrunch Elsenfeld',
+		address: 'Mühlweg 3, 63820 Elsenfeld',
+		link: 'https://vegan-miltenberg.de/veganbrunch-elsenfeld/',
 		icon: 'blue',
 	},
 	{

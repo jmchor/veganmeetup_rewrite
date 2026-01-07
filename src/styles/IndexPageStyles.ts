@@ -28,7 +28,7 @@ export const BaseElement = styled(Link)`
 export const HistoryElement = styled(BaseElement)`
 	grid-column: 1 / span 2;
 	grid-row: 1 / span 7;
-	background-color: #5978f7;
+	background-color: var(--green);
 
 	@media screen and (min-width: 320px) and (max-width: 768px) {
 		grid-column: 1 / span 5;
@@ -46,33 +46,42 @@ export const VeganMeetupElement = styled(BaseElement)`
 	}
 `;
 export const MapElement = styled(BaseElement)`
-	grid-column: 1 / span 1;
+	grid-column: 4 / span 2;
 	grid-row: 8 / span 7;
-	background-color: green;
+	background-color: var(--lightOrange);
+	border: 15px solid var(--orangeRed);
+
+	h1 {
+		color: var(--orangeRed);
+	}
 
 	@media screen and (min-width: 320px) and (max-width: 768px) {
 		grid-column: 1 / span 5;
 		grid-row: 8 / span 2;
 	}
 `;
-export const AboutElement = styled(BaseElement)`
+export const ResourcesElement = styled(BaseElement)`
 	grid-column: 2 / span 2;
 	grid-row: 8 / span 7;
-	background-color: #9d9d9ddf;
-
-	@media screen and (min-width: 320px) and (max-width: 768px) {
-		grid-column: 1 / span 5;
-		grid-row: 10 / span 2;
-	}
-`;
-export const ResourcesElement = styled(BaseElement)`
-	grid-column: 4 / span 2;
-	grid-row: 8 / span 7;
-	background-color: #b300ffdf;
+	background-color: var(--orangeRed);
 
 	@media screen and (min-width: 320px) and (max-width: 768px) {
 		grid-column: 1 / span 5;
 		grid-row: 12 / span 3;
+	}
+`;
+export const AboutElement = styled(BaseElement)`
+	grid-column: 1 / span 1;
+	grid-row: 8 / span 7;
+	background-color: var(--white);
+	border: 15px solid var(--green);
+	h1 {
+		color: var(--green);
+	}
+
+	@media screen and (min-width: 320px) and (max-width: 768px) {
+		grid-column: 1 / span 5;
+		grid-row: 10 / span 2;
 	}
 `;
 export const Signatureelement = styled.div`

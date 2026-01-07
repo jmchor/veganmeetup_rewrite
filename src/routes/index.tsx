@@ -30,7 +30,7 @@ function LandingPage() {
 						<Headline>Über uns</Headline>
 					</AboutElement>
 					<MapElement to='/map'>
-						<Headline>Vegane Karte</Headline>
+						<Headline>Vegane Landkarte</Headline>
 					</MapElement>
 					<ResourcesElement to='/resources'>
 						<Headline>Aktivisti & Ressourcen</Headline>
