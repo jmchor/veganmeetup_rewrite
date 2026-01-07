@@ -56,7 +56,8 @@ function AboutPage() {
 					</StyledLink>
 				</ThirdItem>
 				<FourthItem>
-					<img src='/H&H.jpeg	' alt='Heather & Hannes' />
+					<img src='/Hannes.jpg	' alt='Hannes' />
+					<img src='/Heather.jpeg	' alt='Heather' />
 				</FourthItem>
 			</AboutGridContainer>
 		</PageContainer>
@@ -98,7 +99,7 @@ export const FirstItem = styled(AboutBaseItem)`
 	grid-column: 1 / span 2;
 	grid-row: 1;
 
-	@media screen and (min-width: 320px) and (max-width: 1440px) {
+	@media screen and (min-width: 320px) and (max-width: 1023px) {
 		grid-column: 1 / span 5;
 		grid-row: 1;
 	}
@@ -117,7 +118,7 @@ export const SecondItem = styled(AboutBaseItem)`
 		margin: 0;
 	}
 
-	@media screen and (min-width: 320px) and (max-width: 1440px) {
+	@media screen and (min-width: 320px) and (max-width: 1023px) {
 		grid-column: 1 / span 5;
 		grid-row: 2;
 	}
@@ -135,7 +136,7 @@ export const ThirdItem = styled(AboutBaseItem)`
 		margin: 0;
 	}
 
-	@media screen and (min-width: 320px) and (max-width: 1440px) {
+	@media screen and (min-width: 320px) and (max-width: 1023px) {
 		grid-column: 1 / span 5;
 		grid-row: 4;
 	}
@@ -144,8 +145,16 @@ export const ThirdItem = styled(AboutBaseItem)`
 export const FourthItem = styled(AboutBaseItem)`
 	grid-column: 4 / span 3;
 	grid-row: 2;
+	display: flex;
+	flex-direction: row;
+	gap: 20px;
+	justify-content: center;
+	align-items: center;
+	img {
+		width: 50%;
+	}
 
-	@media screen and (min-width: 320px) and (max-width: 1440px) {
+	@media screen and (min-width: 320px) and (max-width: 1023px) {
 		grid-column: 1 / span 5;
 		grid-row: 3;
 	}
